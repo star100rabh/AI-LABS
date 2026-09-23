@@ -28,9 +28,7 @@ void BFS(int start, vector<vector<int>>& adj, int n) {
 int main() {
     int n = 5;
 
-    vector<vector<int>> adj(n);
-
-    // Graph
+    vector<vector<int>> adj(n); 
     adj[0] = {1, 2};
     adj[1] = {0, 3, 4};
     adj[2] = {0};

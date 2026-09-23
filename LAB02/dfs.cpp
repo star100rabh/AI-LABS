@@ -1,15 +1,26 @@
 #include <iostream>
 #include <vector>
+#include <stack>
 using namespace std;
 
-void DFS(int node, vector<vector<int>>& adj, vector<bool>& visited) {
-    visited[node] = true;
+void DFS(int start, vector<vector<int>>& adj, int n) {
+    vector<bool> visited(n, false);
+    stack<int> st;
 
-    cout << node << " ";
+    st.push(start);
 
-    for (int neighbor : adj[node]) {
-        if (!visited[neighbor]) {
-            DFS(neighbor, adj, visited);
+    while (!st.empty()) {
+        int node = st.top();
+        st.pop();
+        if (visited[node])
+            continue;
+
+        visited[node] = true;
+        cout << node << " ";
+        for (int neighbor : adj[node]) {
+            if (!visited[neighbor]) {
+                st.push(neighbor);
+            }
         }
     }
 }
@@ -26,10 +37,9 @@ int main() {
     adj[3] = {1};
     adj[4] = {1};
 
-    vector<bool> visited(n, false);
-
     cout << "DFS Traversal: ";
-    DFS(0, adj, visited);
+
+    DFS(0, adj, n);
 
     return 0;
 }
