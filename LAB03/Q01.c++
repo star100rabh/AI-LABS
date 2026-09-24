@@ -3,7 +3,6 @@
 using namespace std;
 
 int main() {
-    // x1 = house size, x2 = bedrooms, y = price
     double x1[] = {1000, 1500, 2000, 2500};
     double x2[] = {2, 3, 4, 5};
     double y[]  = {200, 300, 400, 500};
