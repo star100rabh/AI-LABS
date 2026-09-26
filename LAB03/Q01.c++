@@ -1,7 +1,6 @@
 // regression code 
 #include <iostream>
 using namespace std;
-
 int main() {
     double x1[] = {1000, 1500, 2000, 2500};
     double x2[] = {2, 3, 4, 5};
@@ -10,8 +9,7 @@ int main() {
     int n = 4;
     double w1 = 0, w2 = 0, b = 0;
     double lr = 0.000001;
-
-    for (int epoch = 0; epoch < 10000; epoch++) {
+    for (int epoch=0; epoch < 10000; epoch++) {
         double dw1 = 0, dw2 = 0, db = 0;
 
         for (int i = 0; i < n; i++) {
@@ -37,5 +35,5 @@ int main() {
 
     cout << "Predicted Price = " << price << endl;
 
-    return 0;
+    
 }
